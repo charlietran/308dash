@@ -67,6 +67,8 @@ GEM
       multi_json (~> 1.0)
       simple_oauth (~> 0.2)
     tzinfo (1.0.1)
+    tzinfo-data (1.2013.4)
+      tzinfo (>= 1.0.0)
 
 PLATFORMS
   ruby
@@ -75,3 +77,4 @@ DEPENDENCIES
   dashing
   gtfs
   twitter
+  tzinfo-data
