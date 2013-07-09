@@ -10,8 +10,6 @@ class Dashing.Trash extends Dashing.Widget
 
   updateTrash: ->
     peoples = ['Tom', 'Ant', 'Jamin', 'Charlie', 'CJ'];
-    console.log(peoples)
     today = new Date()
     week = today.getWeek()
     @set('trash', peoples[week%5])
-    console.log peoples[week%5]

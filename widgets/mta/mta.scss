@@ -11,8 +11,16 @@ $text-color: #FFFDA3;
   background-color: $background-color;
 
   .line {
+    display: inline-block;
     font-size: 270%;
     color: $text-color;
+    border: 6px solid $text-color;
+    -webkit-border-radius: 64px;
+    border-radius: 64px;
+    width: 64px; height: 64px;
+    line-height: 64px;
+    text-align: center;
+    padding: 6px;
   }
 
   .name {
