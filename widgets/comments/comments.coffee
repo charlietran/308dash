@@ -19,6 +19,8 @@ class Dashing.Comments extends Dashing.Widget
     comments = @get('comments')
     if comments
       @commentElem.fadeOut =>
+        tmpEl = $('<span></span>')
         @currentIndex = (@currentIndex + 1) % comments.length
+        comments[@currentIndex]['body'] = tmpEl.html(comments[@currentIndex]['body']).text()
         @set 'current_comment', comments[@currentIndex]
         @commentElem.fadeIn()

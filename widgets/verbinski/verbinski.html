@@ -1,4 +1,4 @@
-<div id="right-now" data-bind-class="right_now"> 
+<div id="right-now" data-bind-class="right_now">
   <div class="column-inner column-left">
     <h3 class="title">Right now</h3>
     <h2 class="temp" data-bind="current.temperature | append '&deg;' | raw"></h2>
@@ -18,7 +18,7 @@
         <span>Wind: </span>
         <span data-bind="wind_bearing"></span>
         <span data-bind="current.wind_speed | raw"></span>
-        <span> km/h </span>
+        <span> mph </span>
       </p>
     </div>
   </div>
@@ -36,10 +36,10 @@
     <div class="details-text-only">
       <p>
         <span>L&thinsp;: </span>
-        <span data-bind="today.low | append '&deg;C' | raw"></span>
+        <span data-bind="today.low | append '&deg;F' | raw"></span>
         <span> | </span>
         <span>H&thinsp;: </span>
-        <span data-bind="today.high | append '&deg;C' | raw"></span>
+        <span data-bind="today.high | append '&deg;F' | raw"></span>
       </p>
     </div>
 
@@ -52,7 +52,6 @@
       </p>
     </div>
 
-    <p class="powered-by">Powered by Forecast.io</p>
     <p class="last-updated">
       <span>Last updated: </span>
       <span data-bind="last_updated"></span>

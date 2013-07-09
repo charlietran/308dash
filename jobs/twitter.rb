@@ -1,16 +1,14 @@
 require 'twitter'
 
-
-#### Get your twitter keys & secrets:
 #### https://dev.twitter.com/docs/auth/tokens-devtwittercom
 Twitter.configure do |config|
-  config.consumer_key = 'YOUR_CONSUMER_KEY'
-  config.consumer_secret = 'YOUR_CONSUMER_SECRET'
-  config.oauth_token = 'YOUR_OAUTH_TOKEN'
-  config.oauth_token_secret = 'YOUR_OAUTH_SECRET'
+  config.consumer_key = 'uPlkCqbVuFp3YgD71ouA'
+  config.consumer_secret = '59RxJAzbJ5sAsJv6fcxbL9DM4PAmzL0M9LOQOT5ZpHE'
+  config.oauth_token = '17665662-cKaafNPzsbMwAXiu3t7lnB7sGWsVf0j3aGdGyLEcY'
+  config.oauth_token_secret = 'XV6XgYx2Ro8H2bAOUsaEOwwb2o0AtxIMb6rog6AkQbo'
 end
 
-search_term = URI::encode('#todayilearned')
+search_term = URI::encode('from:DUMBOFoodTrucks')
 
 SCHEDULER.every '10m', :first_in => 0 do |job|
   begin

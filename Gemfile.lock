@@ -5,7 +5,7 @@ GEM
     coffee-script (2.2.0)
       coffee-script-source
       execjs
-    coffee-script-source (1.6.2)
+    coffee-script-source (1.6.3)
     daemons (1.1.9)
     dashing (1.1.0)
       coffee-script (>= 1.6.2)
@@ -22,6 +22,10 @@ GEM
       multi_json (~> 1.0)
     faraday (0.8.7)
       multipart-post (~> 1.1)
+    gtfs (0.2.1)
+      multi_json
+      rake
+      rubyzip
     hike (1.2.3)
     multi_json (1.7.7)
     multipart-post (1.2.0)
@@ -30,6 +34,8 @@ GEM
       rack
     rack-test (0.6.2)
       rack (>= 1.0)
+    rake (10.1.0)
+    rubyzip (0.9.9)
     rufus-scheduler (2.0.19)
       tzinfo (>= 0.3.23)
     sass (3.2.9)
@@ -67,4 +73,5 @@ PLATFORMS
 
 DEPENDENCIES
   dashing
+  gtfs
   twitter
