@@ -1,4 +1,4 @@
-console.log("Verbinski (the weather widget) has been loaded!");
+console.log("Weather widget loaded.");
 
 function getIcon(iconKey) {
   var prefix = "/assets/climacons/svg/";

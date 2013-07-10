@@ -2,7 +2,7 @@ require 'dashing'
 
 configure do
   set :auth_token, 'YOUR_AUTH_TOKEN'
-  set :default_dashboard, 'verbinski'
+  set :default_dashboard, '308'
 
   helpers do
     def protected!
