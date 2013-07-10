@@ -3,7 +3,7 @@ require 'net/https'
 require 'json'
 
 # Forecast API Key from https://developer.forecast.io
-forecast_api_key = 'cfdd291618477722dda47cf80573c0a2'
+forecast_api_key = ENV['FORECAST_API_KEY']
 
 # Latitude, Longitude for location
 forecast_location_lat = '40.704536'
@@ -66,7 +66,7 @@ SCHEDULER.every '10m', :first_in => 0 do |job|
     this_week.push(this_day)
   end
 
-  send_event('verbinski', {
+  send_event('forecast', {
     current: current,
     today: today,
     upcoming_week: this_week,

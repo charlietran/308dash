@@ -1,8 +1,8 @@
-class Dashing.Verbinski extends Dashing.Widget
+class Dashing.Forecast extends Dashing.Widget
 
   @accessor 'current_icon', ->
     getIcon(@get('current.icon'))
-   
+
   @accessor 'day_icon', ->
     getIcon(@get('today.icon'))
 
