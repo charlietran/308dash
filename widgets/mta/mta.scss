@@ -31,6 +31,7 @@ $text-color: #FFFDA3;
   .direction {
     font-size: 100%;
     color: $text-color;
+    text-transform: capitalize;
   }
 
   .time {
