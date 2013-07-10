@@ -1,24 +1,24 @@
 ---
 buzzwords: |+
-  data: {"items":[{"label":"Paradigm shift","value":4},{"label":"Web 2.0","value":10},{"label":"Synergy","value":10},{"label":"Pivoting","value":3},{"label":"Streamlininess","value":21},{"label":"Turn-key","value":13},{"label":"Leverage","value":21},{"label":"Enterprise","value":22},{"label":"Exit strategy","value":6}],"id":"buzzwords","updatedAt":1373391635}
+  data: {"items":[{"label":"Web 2.0","value":11},{"label":"Streamlininess","value":12},{"label":"Turn-key","value":9},{"label":"Synergy","value":5},{"label":"Exit strategy","value":11},{"label":"Pivoting","value":12},{"label":"Enterprise","value":7},{"label":"Leverage","value":10},{"label":"Paradigm shift","value":6}],"id":"buzzwords","updatedAt":1373488600}
 
 convergence: |+
-  data: {"points":[{"x":861,"y":48},{"x":862,"y":35},{"x":863,"y":12},{"x":864,"y":17},{"x":865,"y":45},{"x":866,"y":30},{"x":867,"y":40},{"x":868,"y":42},{"x":869,"y":13},{"x":870,"y":5}],"id":"convergence","updatedAt":1373391635}
+  data: {"points":[{"x":84,"y":6},{"x":85,"y":19},{"x":86,"y":28},{"x":87,"y":37},{"x":88,"y":28},{"x":89,"y":19},{"x":90,"y":32},{"x":91,"y":25},{"x":92,"y":48},{"x":93,"y":5}],"id":"convergence","updatedAt":1373488600}
 
 valuation: |+
-  data: {"current":2,"last":84,"id":"valuation","updatedAt":1373391635}
+  data: {"current":11,"last":9,"id":"valuation","updatedAt":1373488600}
 
 karma: |+
-  data: {"current":51621,"last":1208,"id":"karma","updatedAt":1373391635}
+  data: {"current":66890,"last":196206,"id":"karma","updatedAt":1373488600}
 
 synergy: |+
-  data: {"value":36,"id":"synergy","updatedAt":1373391635}
+  data: {"value":10,"id":"synergy","updatedAt":1373488600}
 
 verbinski: |+
-  data: {"current":{"temperature":87,"summary":"Partly Cloudy","humidity":"52&#37;","wind_speed":8,"wind_bearing":203,"icon":"partly-cloudy-day"},"today":{"summary":"Light rain later this afternoon.","high":87,"low":73,"sunrise":"5:34 am","sunset":"8:30 pm","icon":"rain"},"upcoming_week":[{"max_temp":84,"min_temp":73,"time":"Wed","icon":"rain"},{"max_temp":83,"min_temp":72,"time":"Thu","icon":"rain"},{"max_temp":82,"min_temp":68,"time":"Fri","icon":"rain"},{"max_temp":82,"min_temp":65,"time":"Sat","icon":"clear-day"},{"max_temp":83,"min_temp":65,"time":"Sun","icon":"rain"},{"max_temp":85,"min_temp":67,"time":"Mon","icon":"rain"},{"max_temp":86,"min_temp":70,"time":"Tue","icon":"clear-day"}],"id":"verbinski","updatedAt":1373391116}
+  data: {"current":{"temperature":84,"summary":"Mostly Cloudy","humidity":"65&#37;","wind_speed":12,"wind_bearing":204,"icon":"partly-cloudy-day"},"today":{"summary":"Light rain starting this evening.","high":85,"low":75,"sunrise":"5:35 am","sunset":"8:29 pm","icon":"rain"},"upcoming_week":[{"max_temp":83,"min_temp":73,"time":"Thu","icon":"rain"},{"max_temp":79,"min_temp":70,"time":"Fri","icon":"rain"},{"max_temp":84,"min_temp":68,"time":"Sat","icon":"rain"},{"max_temp":84,"min_temp":68,"time":"Sun","icon":"partly-cloudy-night"},{"max_temp":86,"min_temp":70,"time":"Mon","icon":"partly-cloudy-day"},{"max_temp":88,"min_temp":72,"time":"Tue","icon":"partly-cloudy-day"},{"max_temp":90,"min_temp":74,"time":"Wed","icon":"partly-cloudy-day"}],"id":"verbinski","updatedAt":1373488435}
 
 mta: |+
-  data: {"line":"C","name":"High St","direction":"EUCLID AV","time":"Arrives in 4 mins","id":"mta","updatedAt":1373391636}
+  data: {"line":"F","name":"York St","direction":"CONEY ISLAND - STILLWELL AV","time":"Arrives in 4 mins","id":"mta","updatedAt":1373488598}
 
 twitter_mentions: |+
   data: {"comments":[{"name":"DUMBO Food Trucks","body":"RT @dumbolot: Happy Tuesday #DUMBO! @Valduccis @mikenwillies and @bigdsgrub holding down the lot on jay &amp; water today!","avatar":"https://si0.twimg.com/profile_images/2162480400/nom_normal.jpg"},{"name":"DUMBO Food Trucks","body":"RT @funbunsnyc: Front and Adams st! Beautiful weather here! @dumbolot @dumbofoodtrucks","avatar":"https://si0.twimg.com/profile_images/2162480400/nom_normal.jpg"},{"name":"DUMBO Food Trucks","body":"RT @funbunsnyc: We will be in dumbo tomorrow Tuesday ! Front and Adams St. Watch out for us ! @DUMBOFoodTrucks @dumbolot","avatar":"https://si0.twimg.com/profile_images/2162480400/nom_normal.jpg"},{"name":"DUMBO Food Trucks","body":"Time for dessert! Go get some @YOGO_NYC on Old Fulton near Everit Street.","avatar":"https://si0.twimg.com/profile_images/2162480400/nom_normal.jpg"},{"name":"DUMBO Food Trucks","body":"RT @hibachiheaven: @dumbolot HH2 is on water&amp;jay today. The word of the day is \"scorching\" for ur free upgrade. @DumboNYC  @DUMBOFoodTrucks…","avatar":"https://si0.twimg.com/profile_images/2162480400/nom_normal.jpg"},{"name":"DUMBO Food Trucks","body":"RT @TheSteelCart: Back at it in #DUMBO today! Adams &amp; Front St, right under the blue bridge!\n@DUMBOFoodTrucks","avatar":"https://si0.twimg.com/profile_images/2162480400/nom_normal.jpg"},{"name":"DUMBO Food Trucks","body":"RT @dumbolot: Happy 3rd #dumbo! @gcnyc1 @DomoTaco and @shortysnyc on jay &amp; water yo!","avatar":"https://si0.twimg.com/profile_images/2162480400/nom_normal.jpg"},{"name":"DUMBO Food Trucks","body":"RT @DomoTaco: Throwin' #tacos #limeade and havoc your way on Jay + Water. TWILL COMMENCE AT 11:30. @dumbolot @dumbonyc @dumbofoodtrucks","avatar":"https://si0.twimg.com/profile_images/2162480400/nom_normal.jpg"}],"id":"twitter_mentions","updatedAt":1373391115}
