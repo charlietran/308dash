@@ -1,4 +1,4 @@
-require 'gtfs'
+require 'csv'
 require 'time'
 
 # Add the stations and lines you want to get updates on
@@ -29,33 +29,44 @@ $index = 0
 
 $stop_times = nil
 
-# Retrieves GTFS data and builds primary data with lines of interest
-SCHEDULER.every '24h', :first_in => 0 do |job|
-  puts('Retrieving GTFS data')
-  # Defaults to strict checking of required columns
-  $source = GTFS::Source.build('http://www.mta.info/developers/data/nyct/subway/google_transit.zip')
+# Defaults to strict checking of required columns
+# $source = GTFS::Source.build('http://www.mta.info/developers/data/nyct/subway/google_transit.zip')
 
-  # Get stop_ids of our stops of interest (these are listed in the array target_stops)
-  $source.stops.each do |stop|
-    if $target_stops.include? stop.name
 
-      target_stop = Hash.new
+trips_path = File.dirname(__FILE__) + '/../assets/mta/trips.txt'
 
-      target_stop['name'] = stop.name
-      target_stop['id'] = stop.id
 
-      $stop_hash.push(target_stop)
-      $my_stop_ids.push(stop.id)
-    end
+puts('Parsing Stops...')
+stops_path = File.dirname(__FILE__) + '/../assets/mta/stops.txt'
+CSV.foreach(stops_path, headers: true) do |stop|
+  if $target_stops.include? stop['stop_name']
+
+    target_stop = Hash.new
+
+    target_stop['name'] = stop['stop_name']
+    target_stop['id'] = stop['stop_id']
+
+    $stop_hash.push(target_stop)
+    $my_stop_ids.push(stop['stop_id'])
   end
-
-  # Get stop_times at stops with our stop_ids
-  $stop_times = $source.stop_times.select { |stop_time| $my_stop_ids.include? stop_time.stop_id }
-
-  # Set request_flag to true so that we can start calculating schedules
-  $request_flag = true
-  puts('GTFS data received')
 end
+
+puts('Parsing Stop Times...')
+stop_times_path = File.dirname(__FILE__) + '/../assets/mta/stop_times.txt'
+stop_times_csv = CSV.read(stop_times_path, headers: true)
+$stop_times = stop_times_csv.select { |stop_time| $my_stop_ids.include? stop_time['stop_id'] }
+
+# CSV.foreach(stop_times_path, headers: true) do |stop_time|
+#   if $my_stop_ids.include? stop_time['stop_id']
+#     $stop_times << stop_time
+#   end
+# end
+
+puts('Parsing Trips...')
+$trips = CSV.read(trips_path, headers: true)
+$request_flag = true
+
+puts('MTA Parsing done.')
 
 
 # Calculates trains leaving in the next few minutes which stop at the target_stations
@@ -68,7 +79,7 @@ SCHEDULER.every $UPDATE, :first_in => '5s' do |job|
     # Get stop_times from our stops with trains departing in the next 10 minutes
     $stop_times.each do |stop_time|
 
-      split_dept_time = stop_time.departure_time.split(':')
+      split_dept_time = stop_time['departure_time'].split(':')
       dept_time = (3600*split_dept_time[0].to_i) + (60*split_dept_time[1].to_i) + (split_dept_time[2].to_i)
 
       time = Time.now.to_a
@@ -82,14 +93,14 @@ SCHEDULER.every $UPDATE, :first_in => '5s' do |job|
 
         # Get line and direction based on trip_id
         # Then form objects containing final data to display
-        selected_trip = $source.trips.select { |trip| trip.id == stop_time.trip_id }
+        selected_trip = $trips.select { |trip| trip['trip_id'] == stop_time['trip_id'] }
 
         # If line is one of our target lines, create data object
-        if $target_lines.include? selected_trip[0].route_id
+        if $target_lines.include? selected_trip[0]['route_id']
 
           final_object = Hash.new
 
-          stop = $stop_hash.select { |hashed_stop| hashed_stop['id'] == stop_time.stop_id }
+          stop = $stop_hash.select { |hashed_stop| hashed_stop['id'] == stop_time['stop_id'] }
 
           final_object['name'] = stop[0]['name']
 
@@ -105,8 +116,8 @@ SCHEDULER.every $UPDATE, :first_in => '5s' do |job|
             final_object['time'] = "1Arrives in #{mins} mins"
           end
 
-          final_object['line'] = selected_trip[0].route_id
-          final_object['direction'] = selected_trip[0].headsign
+          final_object['line'] = selected_trip[0]['route_id']
+          final_object['direction'] = selected_trip[0]['trip_headsign']
 
           $final_hash.push(final_object)
         end

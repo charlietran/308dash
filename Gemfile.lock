@@ -20,10 +20,6 @@ GEM
     eventmachine (1.0.3)
     execjs (1.4.0)
       multi_json (~> 1.0)
-    gtfs (0.2.1)
-      multi_json
-      rake
-      rubyzip
     hike (1.2.3)
     multi_json (1.7.7)
     rack (1.5.2)
@@ -31,8 +27,6 @@ GEM
       rack
     rack-test (0.6.2)
       rack (>= 1.0)
-    rake (10.1.0)
-    rubyzip (0.9.9)
     rufus-scheduler (2.0.19)
       tzinfo (>= 0.3.23)
     sass (3.2.9)
@@ -67,5 +61,4 @@ PLATFORMS
 
 DEPENDENCIES
   dashing
-  gtfs
   tzinfo-data
