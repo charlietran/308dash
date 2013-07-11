@@ -36,38 +36,39 @@ $stop_times = nil
 trips_path = File.dirname(__FILE__) + '/../assets/mta/trips.txt'
 
 
-puts('Parsing Stops...')
-stops_path = File.dirname(__FILE__) + '/../assets/mta/stops.txt'
-CSV.foreach(stops_path, headers: true) do |stop|
-  if $target_stops.include? stop['stop_name']
+SCHEDULER.in '15s' do |job|
+  puts('Parsing Stops...')
+  stops_path = File.dirname(__FILE__) + '/../assets/mta/stops.txt'
+  CSV.foreach(stops_path, headers: true) do |stop|
+    if $target_stops.include? stop['stop_name']
 
-    target_stop = Hash.new
+      target_stop = Hash.new
 
-    target_stop['name'] = stop['stop_name']
-    target_stop['id'] = stop['stop_id']
+      target_stop['name'] = stop['stop_name']
+      target_stop['id'] = stop['stop_id']
 
-    $stop_hash.push(target_stop)
-    $my_stop_ids.push(stop['stop_id'])
+      $stop_hash.push(target_stop)
+      $my_stop_ids.push(stop['stop_id'])
+    end
   end
+
+  puts('Parsing Stop Times...')
+  stop_times_path = File.dirname(__FILE__) + '/../assets/mta/stop_times.txt'
+  stop_times_csv = CSV.read(stop_times_path, headers: true)
+  $stop_times = stop_times_csv.select { |stop_time| $my_stop_ids.include? stop_time['stop_id'] }
+
+  # CSV.foreach(stop_times_path, headers: true) do |stop_time|
+  #   if $my_stop_ids.include? stop_time['stop_id']
+  #     $stop_times << stop_time
+  #   end
+  # end
+
+  puts('Parsing Trips...')
+  $trips = CSV.read(trips_path, headers: true)
+  $request_flag = true
+
+  puts('MTA Parsing done.')
 end
-
-puts('Parsing Stop Times...')
-stop_times_path = File.dirname(__FILE__) + '/../assets/mta/stop_times.txt'
-stop_times_csv = CSV.read(stop_times_path, headers: true)
-$stop_times = stop_times_csv.select { |stop_time| $my_stop_ids.include? stop_time['stop_id'] }
-
-# CSV.foreach(stop_times_path, headers: true) do |stop_time|
-#   if $my_stop_ids.include? stop_time['stop_id']
-#     $stop_times << stop_time
-#   end
-# end
-
-puts('Parsing Trips...')
-$trips = CSV.read(trips_path, headers: true)
-$request_flag = true
-
-puts('MTA Parsing done.')
-
 
 # Calculates trains leaving in the next few minutes which stop at the target_stations
 SCHEDULER.every $UPDATE, :first_in => '5s' do |job|
