@@ -1,3 +1,4 @@
+trip_id,arrival_time,departure_time,stop_id,stop_sequence,stop_headsign,pickup_type,drop_off_type,shape_dist_traveled
 B20121216WKD_001150_A..S74R,00:59:00,00:59:00,A40S,30,,0,0,
 B20121216WKD_014200_A..N09R,03:16:00,03:16:00,A40N,29,,0,0,
 B20121216WKD_002950_A..S74R,01:18:30,01:18:30,A40S,30,,0,0,

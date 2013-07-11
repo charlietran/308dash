@@ -1,3 +1,4 @@
+stop_id,stop_code,stop_name,stop_desc,stop_lat,stop_lon,zone_id,stop_url,location_type,parent_station
 A40,,High St,,40.699337,-73.990531,,,1,
 A40N,,High St,,40.699337,-73.990531,,,0,A40
 A40S,,High St,,40.699337,-73.990531,,,0,A40
